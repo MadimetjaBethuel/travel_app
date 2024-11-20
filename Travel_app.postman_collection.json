@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "fa6157ab-9a41-4a0b-bcae-0def6ebad3ce",
+		"name": "Travel_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26840995"
+	},
+	"item": [
+		{
+			"name": "query destination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"total_days\": 8,\n    \"daily_subjects\": [\"maths\", \"sepedi\", \"english\", \"physics\"],\n    \"optional_subjects\": [\"Life Science\", \"Geography\"],\n    \"optional_count\": 2,\n    \"occur_twice\": [\"L.o\"],\n    \"occur_twice_count\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/destinations?query=johanesburg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"destinations"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "johanesburg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check weather",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"latitude\": -26.205,\n\"longitude\": 28.049722,\n\"hourly\" : \"temperature_2m\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create itenerary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"destination\": {\n    \"id\": 1,\n    \"name\": \"Paris, France\",\n    \"country\": \"France\",\n    \"city\": \"Paris\",\n    \"description\": \"The City of Light\"\n  },\n  \"weather\": {\n    \n  },\n  \"start_date\": \"2024-03-15\",\n  \"end_date\": \"2024-03-20\"\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/itineraries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"itineraries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get itineraries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/itineraries/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"itineraries",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get itinerary by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/itineraries/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"itineraries",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update itineraries",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/itineraries/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"itineraries",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete itineraries Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/itineraries/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"itineraries",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create activities",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Paris City Tour\",\n  \"start_date\": \"2024-03-15\",\n  \"end_date\": \"2024-03-16\",\n  \"description\": \"Explore iconic landmarks like Eiffel Tower and Louvre Museum\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/activities/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"activities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get activities",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/itineraries/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"itineraries",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update activity",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/activities/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"activities",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete activity",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": [\"-26.205\"],\n    \"longitude\": [\"28.049722\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/activities/1234549687",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"activities",
+						"1234549687"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

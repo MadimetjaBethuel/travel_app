@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: pipenv run python manage.py runserver 0.0.0.0:8000
+    container_name: travel_app
+    environment:
+      - POSTGRES_DB=your_database_name
+      - POSTGRES_USER=your_database_user
+      - POSTGRES_PASSWORD=your_database_password
+      - POSTGRES_HOST=localhost
+      - POSTGRES_PORT=5432
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=your_database_name
+      - POSTGRES_USER=your_database_user
+      - POSTGRES_PASSWORD=your_database_password
+
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+volumes:
+  db-data:
